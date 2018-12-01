@@ -1,0 +1,17 @@
+{
+    "name": "learn-js-much-win",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "jest": "^23.6.0"
+    },
+    "jest": {
+        "verbose": true,
+        "bail": true
+    },
+    "scripts": {
+        "test": "jest --watch",
+        "test:all": "jest --no-bail --watch"
+    }
+}
