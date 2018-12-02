@@ -47,6 +47,7 @@ Assuming the above are complete, you can now run the following command:
 # run tests
 $ yarn test
 ```
+**to cancel this command, hit Ctrl+C a couple of times**
 
 You'll see the first failing test coming from [01-intro/index.js](./01-intro/index.js). Navigate to [01-intro](./01-intro) and you'll see the following structure:
 
