@@ -1,5 +1,16 @@
-const sum = require('.');
+// eslint-disable-next-line no-var
+var helloWorld = require('./index.js');
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+describe('intro tests', () => {
+  context('when fetch succeeds', () => {
+    it('returns hello world!', () => {
+      expect(helloWorld).toBe('Hello World!');
+    });
+  });
+
+  context('when fetch fails', () => {
+    it('returns ef world!', () => {
+      expect(helloWorld).toBe('Hello World!');
+    });
+  });
 });

@@ -1,5 +1,5 @@
-function sum(a, b) {
-      return a + b;
-}
+// eslint-disable-next-line no-var
+var helloWorld;
 
-module.exports = sum;
+
+module.exports = helloWorld;

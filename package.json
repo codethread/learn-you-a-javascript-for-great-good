@@ -1,17 +1,49 @@
 {
-    "name": "learn-js-much-win",
-    "version": "1.0.0",
-    "main": "index.js",
-    "license": "MIT",
-    "devDependencies": {
-        "jest": "^23.6.0"
-    },
-    "jest": {
-        "verbose": true,
-        "bail": true
-    },
-    "scripts": {
-        "test": "jest --watch",
-        "test:all": "jest --no-bail --watch"
+  "name": "learn-js-much-win",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "8",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.0",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "test:all": "jest --no-bail --watch"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb-base",
+      "plugin:jest/recommended"
+    ],
+    "plugins": [
+      "jest"
+    ],
+    "rules": {
+      "import/prefer-default-export": false
     }
+  },
+  "jest": {
+    "verbose": true,
+    "bail": true
+  }
 }
