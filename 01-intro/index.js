@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-var
-var helloWorld;
+var helloWorld = {
+  butter: '',
+  foo: 4,
+};
 
-
-module.exports = helloWorld;
+export default helloWorld;

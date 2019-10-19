@@ -11,7 +11,7 @@
 ## Walkthrough
 
 ### Getting the test to pass
-Start by running `yarn test`. You will see jest scan for files, and then get an output something like
+Start by running `yarn test`. You will see jest scan for files, and then get an output, something like:
 
 ```sh
  FAIL  01-intro/index.spec.js (5.682s)
@@ -69,26 +69,9 @@ As soon as you save this change, go back to your terminal and you should see the
 Almost..  
 well, this would be a rather poor tutorial if we stopped there!
 
-### Getting code from one js file to another
+The test in this case was checking the value of `helloWorld`, which started as `null` (because `var helloWorld` is the same as typing `var helloWorld = null`)
 
-This guide assumes you understand common programming principles, such as what a `String`, `function`,`test` is, and most crucially, what `scope` is i.e:  
-*(there will be more details about functions later, but for now the syntax is self explanatory enough)*  
-```js
-var a = 2;
-
-function foo() {
-  var b = 4;
-
-  return a + b
-  // outputs => 6
-}
-
-function bar() {
-  return a + b
-  // Reference Error: b is not defined
-}
-```
-But how do we get variables and functions from one javascript file into another, such as getting:
+So how did we get the variable:
 ```js
 var helloWorld = 'Hello World!';
 ```
@@ -111,7 +94,7 @@ module.exports = helloWorld;
 ```
 
 `module` is an `Object` ([what is an object?](./02-basic-built-ins/README.md#objects)) given to us by `node` runtime (more on this later sections), with a property `exports` which we can modify to, as the name implies, 'export' code from one 'module' to another.
-So inside of `./index.js` we have now 'exported' our data by assigning `module.export` to be the value of of `var helloWorld`.  
+Inside of `./index.js` we have now 'exported' our data by assigning `module.export` to be the value of of `var helloWorld`.  
 You could think of `module.export` as like calling `return` inside the file as though the whole file were a function (which it actually is as, again, we'll see in later sections).
 
 Once we have something 'exported', we can 'import' it. Go to `./index.spec.js` and you will see:
@@ -120,13 +103,13 @@ var helloWorld = require('./index.js');
 ```
 
 as you may have guessed, `require` is a function given to us by `node` and it allows us to import whatever was 'exported' from the `module` we point to inside the parameters of the `require` function. The pattern is a conventional unix path, where:  
-- `./` and `.` : the folder I am currently in
-- `../` : go back a folder
+- `./` and `.` mean 'the folder I am currently in'
+- `../` means 'go up a folder'
 
 so inside of `index.spec.js` we are `require`ing whatever comes out of `index.js`  
 **Two things of note**  
 - the file extension is optional (and usually avoided, except if you want to import a non `.js` file)
-- you will likely never see 'index' as js bundlers and `node` will automatically look for an `index.js` if you just give a folder path, e.g the following are the same:
+- you will likely never see 'index' as JavaScript bundlers and `node` will automatically look for an `index.js` if you just give a folder path, e.g the following are the same:
     - require('./some/path/index.js')
     - require('./some/path')
     - or if you are already in 'path' you can use `require('.')` (i.e find 'index.js' inside my current folder)
@@ -158,11 +141,6 @@ module.exports = function helloWorld() { return 'Hello World!'}
 var helloWorld = require('.')
 helloWorld() // => 'Hello World!'
 ```
-
-## Practice
-Now that we've gone through the getting information from one file to another, there are some pratice exercises if you'd like to familiarise yourself with `module.export` and `require`.
-
-Go into the file `practice.spec.js`
 
 ### Note on import export
 You may notice I refer here to 'import' and 'export' as opposed to `import` and `export`. This because when I say 'import' and 'export' I am refering to the collective idea of 'importing' and 'exporting' code from one place to another. We will later cover the key words `import` and `export` which are supported by bundlers such as `Webpack` and (some browsers)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Browser_compatibility].  
