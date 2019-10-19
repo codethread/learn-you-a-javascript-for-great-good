@@ -1,7 +1,7 @@
 /* eslint-disable no-var, import/no-mutable-exports */
-var helloWorld = '';
+var helloWorld = 'Hello World!';
 
-var helloWorldWithNewLine = '';
+var helloWorldWithNewLine = 'Hello\nWorld!';
 
 export {
   helloWorld,

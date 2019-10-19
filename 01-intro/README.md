@@ -2,7 +2,6 @@
 
 ## In this section, you will learn:
 
-- The meaning of node's `module` and `require` key word.
 - Changing a single JavaScript `variable`
 - Getting your first test to pass!
 
@@ -22,7 +21,7 @@ Start by running `yarn test`. You will see jest scan for files, and then get an 
     expect(received).toBe(expected) // Object.is equality
 
     Expected: "Hello World!"
-    Received: null
+    Received: ""
 
     Difference:
 
@@ -38,110 +37,77 @@ Start by running `yarn test`. You will see jest scan for files, and then get an 
       at Object.toBe (01-intro/index.spec.js:4:22)
 ```
 
-**If you are unfamiliar with jest, first check out [what is jest](../00-setting-up-for-javascript/what-is-jest.md)**
-
+**If you are interested to learn more about Jest check out [what is jest](../00-setting-up-for-javascript/what-is-jest.md)** but it is not needed to continue with these exercises unless explicitly stated.
 
 The area of interest here is:
 ```sh
 expect(received).toBe(expected) // Object.is equality
 
   Expected: "Hello World!"
-  Received: null
+  Received: ""
 ```
 
 First, let's get this test to pass.
-Go into [index.js](./index.js) and change:
+Go into [index.js](./index.js), where we can see:
 ```js
-var helloWorld;
-```
-to
-```js
-var helloWorld = 'Hello World!';
+var helloWorld = '';
 ```
 
-As soon as you save this change, go back to your terminal and you should see the test rerun (as jest is watching for file changes) with an ouput, something like:
+As you may have guessed, `var` is how we declare a 'variable' in JavaScript. In this case it has an 'Identifier' (posh word for the name of the variable) of 'helloWorld'. We can use this Identifier throughout our program to reference whatever was stored inside of it. The semi-colon `;` is how we indicate to JavaScript that the line of code has finished (these can be omitted if you use line breaks, but it is best practice to keep them in).
+
+The 'value' of our variable is currently **an empty string**. Strings are any collection of printable characters in code. Some examples would be:
+```js
+var string = 'hello there';
+var string1 = ' we can have            lots of       spaces ';
+var string2 = 'numbers are fine too 123 but do not expect to do any maths in here';
+var string3 = 'symbols like #!*& are all fine to but watch out';
+var string4 = "quotes and single quotes are both valid";
+var string5 = "some prefer double quotes as you'll can use apostrophies more easily";
+var string6 = 'if you don\'t use double quotes you need to \'escape\' apostraphies';
+var string7 = 'and yes, if you want to print a backslash: \\ you need to escape it';
+```
+
+See if you can correct the value of the `helloWorld` variable to pass the test.
+*As soon as you save a change to the file, go back to your terminal and you should see the test rerun (as jest is watching for file changes)*
+
+Hopefully you should with an ouput, something like:
 ```sh
  PASS  01-intro/index.spec.js
   ✓ returns hello world! (1ms)
+  ○ skipped 1 test
 ```
 
 **Great! You are now a pro!**  
 Almost..  
 well, this would be a rather poor tutorial if we stopped there!
 
-The test in this case was checking the value of `helloWorld`, which started as `null` (because `var helloWorld` is the same as typing `var helloWorld = null`)
+There are some more tests, which have been `skipped` this is a useful feature in `jest` to allow us to skip over some of our test suite (if every test ran, the output in the console might be a little noisy and hard for you to digest what the problem you were trying to fix was).
 
-So how did we get the variable:
+To re-enable a skipped test, go into the `index.spec.js` file and remove the `.skip`, i.e.:
 ```js
-var helloWorld = 'Hello World!';
+it.skip(... test string)
+// becomes
+it()
 ```
-out of `./index.js` and into `./index.spec.js`?
 
-Well, it depends.
-In the browser, if a html file were to import a javascript file, i.e:
-```html
-<script type="text/javascript" src="01-intro/index.js"></script>
-```
-the `var` `helloWorld` would be created inside the `global` scope, meaning it would be available to all other imported javascript files. This is **far** from ideal, as we have lost control and visibility of where `helloWorld` was defined, and where it may be used.
-
-There are ways around this, however we won't go into them just yet, instead we'll look at how `node` handles this issue.  
-In the browser, our `html` file is loaded, and begins importing everything, css, js, images etc, that the web page will need.  
-In `node`, we are dealing with a more conventional file system, so we can 'import' and 'export' [[note*](###note-on-import-export)] peices of functionality from one `.js` file to another, and then at run time, `node` will pull these various pieces together. This is known as the **CommonJs Module System**.
-
-Inside `./index.js`, notice this line:
+Now we have a new failing test which shows an expected output of
 ```js
-module.exports = helloWorld;
+"Hello
+World!"
 ```
 
-`module` is an `Object` ([what is an object?](./02-basic-built-ins/README.md#objects)) given to us by `node` runtime (more on this later sections), with a property `exports` which we can modify to, as the name implies, 'export' code from one 'module' to another.
-Inside of `./index.js` we have now 'exported' our data by assigning `module.export` to be the value of of `var helloWorld`.  
-You could think of `module.export` as like calling `return` inside the file as though the whole file were a function (which it actually is as, again, we'll see in later sections).
+Notice the new line after 'Hello' which can be slightly tricky to make out in the terminal.
 
-Once we have something 'exported', we can 'import' it. Go to `./index.spec.js` and you will see:
-```js
-var helloWorld = require('./index.js');
-```
+In order to get this test to pass you may find it helpful to know that as well as the backslash `\` there are a few other characters with special meaning in JavaScript:
 
-as you may have guessed, `require` is a function given to us by `node` and it allows us to import whatever was 'exported' from the `module` we point to inside the parameters of the `require` function. The pattern is a conventional unix path, where:  
-- `./` and `.` mean 'the folder I am currently in'
-- `../` means 'go up a folder'
+**Horizontal Tab** is replaced with \t
+**Vertical Tab** is replaced with \v
+**Null char** is replaced with \0
+**Backspace is** replaced with \b
+**Newline is** replaced with \n
+**Carriage return** is replaced with \r
+**Single quote** is replaced with \'
+**Double quote** is replaced with \"
+**Backslash is** replaced with \\
 
-so inside of `index.spec.js` we are `require`ing whatever comes out of `index.js`  
-**Two things of note**  
-- the file extension is optional (and usually avoided, except if you want to import a non `.js` file)
-- you will likely never see 'index' as JavaScript bundlers and `node` will automatically look for an `index.js` if you just give a folder path, e.g the following are the same:
-    - require('./some/path/index.js')
-    - require('./some/path')
-    - or if you are already in 'path' you can use `require('.')` (i.e find 'index.js' inside my current folder)
-    - of if you are already in a folder inside of `path` like `some/path/the-folder-with-our-index/child` require('../')
-
-In summary, these can then be paired to all be the same thing;
-```js
-// exporting a single var
-var helloWorld = 'Hello World!';
-module.exports = helloWorld;
-var helloWorld = require('.')
-helloWorld // => 'Hello World!'
-
-module.exports = 'Hello World!';
-var helloWorld = require('.')
-helloWorld // => 'Hello World!'
-```
-```js
-// exporting an object
-module.exports = { helloWorld: 'Hello World!' };
-var imports = require('.')
-imports.helloWorld
-helloWorld // => 'Hello World!'
-
-```
-```js
-// exporting a function
-module.exports = function helloWorld() { return 'Hello World!'}
-var helloWorld = require('.')
-helloWorld() // => 'Hello World!'
-```
-
-### Note on import export
-You may notice I refer here to 'import' and 'export' as opposed to `import` and `export`. This because when I say 'import' and 'export' I am refering to the collective idea of 'importing' and 'exporting' code from one place to another. We will later cover the key words `import` and `export` which are supported by bundlers such as `Webpack` and (some browsers)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Browser_compatibility].  
-`export` is not to be confused with `modules.export` which is a `node` specific `Object` method.
+Once you have addressed this failing test, Congratulations! You are ready to progress to the next section!
