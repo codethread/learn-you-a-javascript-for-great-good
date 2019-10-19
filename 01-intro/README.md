@@ -5,12 +5,20 @@
 - Changing a single JavaScript `variable`
 - Getting your first test to pass!
 
-*(if the you feel confident in the bullets listed above, just run `yarn test` and get the test(s) to pass, if you get stuck, refer back to the `walkthrough` for guidance)*
+*(if the you feel confident in the bullets listed above, just run `npm test` and get the test(s) to pass, if you get stuck, refer back to the `walkthrough` for guidance)*
 
-## Walkthrough
+## Walk-through
 
 ### Getting the test to pass
-Start by running `yarn test`. You will see jest scan for files, and then get an output, something like:
+
+Open a terminal app, or if you are using [visual studio code](https://code.visualstudio.com/) you can press the back-tick key (`) while holding the CONTROL key to open up an integrated terminal.
+
+```sh
+$ npm test
+# this will prompt you with some options, type 'a' to run all the tests
+```
+
+You will see jest scan for files, and then get an output, something like:
 
 ```sh
  FAIL  01-intro/index.spec.js (5.682s)

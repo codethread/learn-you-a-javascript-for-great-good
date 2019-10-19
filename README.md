@@ -30,27 +30,22 @@ $ nvm install <node version> # or nodenv install <node version>
 $ npm install
 ```
 
-Assuming the above are complete, you can now run the following command:  
+The exercises in this repo are broken into sections such as `01-intro`. The exercises should be completed in sequential order to help you progress as new concepts are introduced.
 
-```sh
-# run tests
-$ npm test
-```
-**if you need to cancel this command, hit Ctrl+C a couple of times**
-
-You'll see the first failing test coming from [01-intro/index.js](./01-intro/index.js). Navigate to [01-intro](./01-intro) and you'll see the following structure:
+All folders within this repo follow this structure:
 
 - 01-intro/
+  - README.md
   - index.js
   - index.spec.js
   - solution.js
-  - README.md
-
-All folders within this repo roughly follow the above structure.
-
-There will be one `index.js` file which you will alter to get the tests, inside of `index.spec.js`, to pass.
 
 The `README.md` will give you guidance and instructions on each task.
 
-There is also a `solution.js` file, just in case you get totally stuck, but you should keep these as a last resort!
+The `index.js` file contains JavaScript code that is either incomplete or 'broken'. You will open this file in an [editor](https://github.com/AHDesigns/learn-you-a-javascript-for-great-good/wiki/JavaScript-Editors) on your machine, and alter the code according to the instructions in the `README.md` and get the tests to pass.
 
+The `index.spec.js` file contains 'tests' that run the code inside of `index.js` to make sure it does what it is expected to do (of course it does not at first, and you will fix this).
+
+There is also a `solution.js` file so you can peek at the answer, just in case you get totally stuck, but you should keep these as a last resort!
+
+Now open up [01-intro/README.md](./01-intro/README.md) in your editor to see your first task.
