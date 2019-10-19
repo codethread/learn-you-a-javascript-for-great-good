@@ -12,42 +12,31 @@ This is **not a guide to programming itself**, and assumes a working knowledge o
 
 ## Getting set up for JavaScript
 
-If you are **completely new** to any of the following, you may find the setup guides helpful:
-- **node**: [00-setup/what is node?](./00-setting-up-for-javascript/what-is-node.md)
-- **jest**: [00-setup/what is jest?](./00-setting-up-for-javascript/what-is-jest.md)
-- editor for JavaScript [00-setup/which editor for js?](./00-setting-up-for-javascript/js-editors.md)
+There is a wiki attached to this project, please navigate to [Node](https://github.com/AHDesigns/learn-you-a-javascript-for-great-good/wiki/Node) and follow the setup instructions there.
 
 ## Getting Started with the Exercises
 
-To begin, [clone](https://help.github.com/articles/cloning-a-repository) this repo and run the following commands:
-
-*You may need to set up the correct node version and install yarn*  
-*If you aren't familiar with having multiple versions of node, check out [00-setup/what is node?](./00-setting-up-for-javascript/what-is-node.md)*
+To begin, [clone](https://help.github.com/articles/cloning-a-repository) this repo and run the following commands in a terminal:
 
 ```sh
 # add correct node-version
 $ cat .nvmrc # outputs a node version like => 8.11.1
 $ nvm install <node version> # or nodenv install <node version>
-
-# if you don't have yarn in this version
-$ npm i -g yarn@latest
 ```
 
 *Once you have your environment set up, install the dependencies for this repo*
 ```sh
 # install dependencies
-$ yarn
+$ npm install
 ```
 
 Assuming the above are complete, you can now run the following command:  
-*Now that the repo is set up, you won't need to run the above commands again*  
-**note the next command: you'll be using it a lot**
 
 ```sh
 # run tests
-$ yarn test
+$ npm test
 ```
-**to cancel this command, hit Ctrl+C a couple of times**
+**if you need to cancel this command, hit Ctrl+C a couple of times**
 
 You'll see the first failing test coming from [01-intro/index.js](./01-intro/index.js). Navigate to [01-intro](./01-intro) and you'll see the following structure:
 
@@ -57,8 +46,11 @@ You'll see the first failing test coming from [01-intro/index.js](./01-intro/ind
   - solution.js
   - README.md
 
-All folders within this repo roughly follow the above structure.  
-There will be at least one index.js file which you will alter to get the tests, inside of index.spec.js, to pass.  
-The `README.md` will give you guidance and instructions on each task.  
-There is also a solution file, just in case you get totally stuck, but you should keep these as a last resort!
+All folders within this repo roughly follow the above structure.
+
+There will be one `index.js` file which you will alter to get the tests, inside of `index.spec.js`, to pass.
+
+The `README.md` will give you guidance and instructions on each task.
+
+There is also a `solution.js` file, just in case you get totally stuck, but you should keep these as a last resort!
 
