@@ -9,7 +9,7 @@
 
 ## Walk-through
 
-### Getting the test to pass
+### Getting the tests to pass
 
 Open a terminal app, or if you are using [visual studio code](https://code.visualstudio.com/) you can press the back-tick key (`) while holding the CONTROL key to open up an integrated terminal.
 
@@ -61,7 +61,7 @@ Go into [index.js](./index.js), where we can see:
 var helloWorld = '';
 ```
 
-As you may have guessed, `var` is how we declare a 'variable' in JavaScript. In this case it has an 'Identifier' (posh word for the name of the variable) of 'helloWorld'. We can use this Identifier throughout our program to reference whatever was stored inside of it. The semi-colon `;` is how we indicate to JavaScript that the line of code has finished (these can be omitted if you use line breaks, but it is best practice to keep them in).
+As you may have guessed, `var` is how we declare a 'variable' in JavaScript. In this case it has an 'Identifier' (posh word for the name, or label of the variable) of 'helloWorld'. We can use this Identifier throughout our program to reference whatever was stored inside of it. The semi-colon `;` is how we indicate to JavaScript that the line of code has finished (these can be omitted if you use line breaks, but it is best practice to keep them in).
 
 The 'value' of our variable is currently **an empty string**. Strings are any collection of printable characters in code. Some examples would be:
 ```js

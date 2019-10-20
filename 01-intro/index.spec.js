@@ -6,6 +6,6 @@ describe('intro tests', () => {
   });
 
   it.skip('helloWorldWithNewLine has value Hello\nWorld!', () => {
-    expect(helloWorldWithNewLine).toBe('Hello \nWorld!');
+    expect(helloWorldWithNewLine).toBe('Hello\nWorld!');
   });
 });
