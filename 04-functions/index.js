@@ -1,6 +1,11 @@
-// look in the tests to see how to define foo and bar
+function foo() {}
+
+function bar() {}
+
+function add() {}
 
 export {
   foo,
-  bar
+  bar,
+  add,
 };
