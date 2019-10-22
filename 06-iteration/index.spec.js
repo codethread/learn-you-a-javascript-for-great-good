@@ -1,6 +1,28 @@
-import { factorial, fibonacci } from '.';
+import {
+  highestMultipleOf5Before, angelicaWantsDoubleChocolateDrops, howMuchBamboo, factorial, fibonacci,
+} from '.';
 
-describe('iteration', () => {
+describe.skip('iteration', () => {
+  it('howMuchBamboo returns correctly', () => {
+    expect(howMuchBamboo(1)).toBe('bamboo ');
+    expect(howMuchBamboo(2)).toBe('bamboo bamboo ');
+    expect(howMuchBamboo(3)).toBe('bamboo bamboo bamboo ');
+  });
+
+  it.skip('angelicaWantsDoubleChocolateDrops keeps doubling angelicas chocolate', () => {
+    expect(angelicaWantsDoubleChocolateDrops(1)).toBe(1);
+    expect(angelicaWantsDoubleChocolateDrops(2)).toBe(2);
+    expect(angelicaWantsDoubleChocolateDrops(3)).toBe(4);
+    expect(angelicaWantsDoubleChocolateDrops(4)).toBe(8);
+  });
+
+  it.skip('highestMultipleOf5Before keeps doubling angelicas chocolate', () => {
+    expect(highestMultipleOf5Before(3)).toBe(0);
+    expect(highestMultipleOf5Before(8)).toBe(5);
+    expect(highestMultipleOf5Before(24)).toBe(20);
+    expect(highestMultipleOf5Before(25)).toBe(20);
+  });
+
   it.skip('factorial function returns correctly', () => {
     expect(factorial(1)).toBe(1);
     expect(factorial(2)).toBe(4);
