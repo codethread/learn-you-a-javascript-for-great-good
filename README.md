@@ -1,4 +1,4 @@
-# Learn You a JavaScript for Great Good!
+# Learn You a JavaScript for Great Good! [![Coding time tracker](https://wakatime.com/badge/github/AHDesigns/learn-you-a-javascript-for-great-good.svg)](https://wakatime.com/badge/github/AHDesigns/learn-you-a-javascript-for-great-good)
 
 > name stolen from the great [Learn You a Haskell for Great Good](http://learnyouahaskell.com/chapters)
 
