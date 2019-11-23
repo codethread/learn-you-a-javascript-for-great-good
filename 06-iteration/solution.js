@@ -32,20 +32,24 @@ function highestMultipleOf5Before(max) {
   return multipleOf5;
 }
 
-// write a factorial function taking one argument which returns it's factorial result
-// eg factorial 4 would be 24 (1 x 2 x 3 x 4) = 24
-function factorial() {}
+function factorial(x) {
+  let sum = 1;
 
-// write a fibonacci sequence generator that when given an argument n
-// returns the nth number in the fibonacci sequence
-// eg fibonacci given n = 1 should return 1, as 1 is the 1st number
-// in the fibonaci sequence
-function fibonacci() {}
+  for (let y = 1; y <= x; y++)  {
+    sum *= y;
+  }
 
-export {
-  howMuchBamboo,
-  angelicaWantsDoubleChocolateDrops,
-  highestMultipleOf5Before,
-  factorial,
-  fibonacci,
+  return sum;
+}
+
+function fibonacci(number) {
+
+    let previous_first = 0, previous_second = 1, next = 1;
+
+    for(var i = 2; i <= number; i++) {
+        next = previous_first + previous_second;
+        previous_first = previous_second;
+        previous_second = next;
+    }
+    return next;
 };
