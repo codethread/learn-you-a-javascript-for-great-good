@@ -68,9 +68,9 @@ The 'value' of our variable is currently **an empty string**. Strings are any co
 var string = 'hello there';
 var string1 = ' we can have            lots of       spaces ';
 var string2 = 'numbers are fine too 123 but do not expect to do any maths in here';
-var string3 = 'symbols like #!*& are all fine to but watch out';
+var string3 = 'symbols like #!*& are all fine too but watch out';
 var string4 = "quotes and single quotes are both valid";
-var string5 = "some prefer double quotes as you'll can use apostrophies more easily";
+var string5 = "some prefer double quotes as you'll see we can use apostrophies more easily";
 var string6 = 'if you don\'t use double quotes you need to \'escape\' apostraphies';
 var string7 = 'and yes, if you want to print a backslash: \\ you need to escape it';
 ```
@@ -78,7 +78,7 @@ var string7 = 'and yes, if you want to print a backslash: \\ you need to escape 
 See if you can correct the value of the `helloWorld` variable to pass the test.
 *As soon as you save a change to the file, go back to your terminal and you should see the test rerun (as jest is watching for file changes)*
 
-Hopefully you should with an ouput, something like:
+Hopefully you should end up with an ouput, something like:
 ```sh
  PASS  01-intro/index.spec.js
   ✓ returns hello world! (1ms)

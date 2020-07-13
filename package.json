@@ -39,7 +39,8 @@
       "jest"
     ],
     "rules": {
-      "import/prefer-default-export": false
+      "import/prefer-default-export": false,
+      "jest/no-disabled-tests": false
     }
   },
   "jest": {
