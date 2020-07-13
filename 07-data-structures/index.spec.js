@@ -1,6 +1,6 @@
 import { foo } from '.';
 
-describe('title', () => {
+describe.skip('title', () => {
   it('does something', () => {
     expect(foo).toBe('');
   });

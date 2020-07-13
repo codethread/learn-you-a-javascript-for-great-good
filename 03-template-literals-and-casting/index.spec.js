@@ -5,7 +5,7 @@ import {
   sarahsAgeNextYearAsString,
 } from '.';
 
-describe('Casting Types', () => {
+describe.skip('Casting Types', () => {
   it('sarahInfo prints Sarah\'s age', () => {
     expect(sarahInfo).toBe('Sarah is 4 years old');
   });

@@ -1,5 +1,7 @@
+const replaceMe = null;
+
 function ifGivenTwoReturnsFive() {
-  if () {
+  if (replaceMe) {
     return 5;
   }
 }

@@ -4,7 +4,7 @@ import {
   weekendDaysInYear,
 } from '.';
 
-describe('numbers and operations', () => {
+describe.skip('numbers and operations', () => {
   it('daysInWeek is 7', () => {
     expect(daysInWeek).toBe(7);
   });

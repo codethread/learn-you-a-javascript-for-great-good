@@ -2,7 +2,7 @@ import {
   addOrSubtract, ifGivenTwoReturnsFive, addIfTrue, returnIfLessThan5,
 } from '.';
 
-describe('conditionals', () => {
+describe.skip('conditionals', () => {
   it('ifGivenTwoReturnsFive returns 5 when passed 2, in all other cases returns nothing', () => {
     expect(ifGivenTwoReturnsFive(2)).toBe(5);
     expect(ifGivenTwoReturnsFive(3)).toBeUndefined();
